@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>React Basic</title>
+</head>
+<body>
+
+<div id="good_job"></div>
+
+  <!-- ✅ Official React 18 -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- ✅ Babel (needed to compile JSX) -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+      const result = (
+          <div>
+            <button>Good job</button> 
+            <p>My name is ridwan</p>
+            <p>Cotton socks</p>
+            <p>Price $10</p>
+            <button>Good job</button> 
+          </div>
+      );
+
+      const output = ReactDOM.createRoot(document.getElementById('good_job'));
+      output.render(result);
+  </script>
+  
+</body>
+</html>
