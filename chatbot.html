@@ -20,7 +20,10 @@
     function ChatInput() {
       return (
         <>
-          <input placeholder="Send a message to Chatbot" size="30"/>
+          <input 
+            placeholder="Send a message to Chatbot" 
+            size="30"
+          />
           <button>Send</button>
         </>
       );
@@ -36,6 +39,7 @@
 
       // const {message , sender} = props;
 
+      /*
       if (sender === 'robot') {
         return(
           <div>
@@ -43,12 +47,18 @@
             {message}
           </div >
         );
-      }
+      } 
+      */
 
       return (
         <div>
+          {sender === 'robot' && (
+            <img src="robot.png" width="50" />
+          ) }
           {message}
-          <img src="img/user.png" width="50" />
+          {sender === 'user' && (
+            <img src="user.png" width="50" />
+          )}
         </div >
       );
     }
@@ -57,10 +67,22 @@
     return(
       <>
         <ChatInput/>
-        <ChatMessage message="hello chatbot" sender="user"/>
-        <ChatMessage message="Hello! How can i help you?" sender="robot"/>
-        <ChatMessage message="Can you get me today's date?" sender="user"/>
-        <ChatMessage message="Today is September 27" sender="robot"/>
+        <ChatMessage 
+          message="hello chatbot" 
+          sender="user"
+        />
+        <ChatMessage 
+          message="Hello! How can i help you?" 
+          sender="robot"
+        />
+        <ChatMessage 
+          message="Can you get me today's date?" 
+          sender="user"
+        />
+        <ChatMessage 
+          message="Today is September 27" 
+          sender="robot"
+        />
       </>
     );
    }
