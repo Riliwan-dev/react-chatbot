@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>React Basic</title>
+</head>
+<body>
+
+<div id="good_job"></div>
+
+<!-- ✅ React & Babel -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+  
+  function LightSwitch() {
+    const [light, setLight] = React.useState("OFF");
+    
+    //   function toggleLight() {
+    //   if (light === "OFF") {
+    //     setLight("ON"); // change state
+    //   } else {
+    //     setLight("OFF"); // change state
+    //   }
+    // }
+    // or this
+    function toggleLight() {
+      setLight(light === "OFF" ? "ON" : "OFF");
+    }
+
+    return (
+      <div>
+        <p>The light is {light}</p>
+        <button onClick={toggleLight}>Switch</button>
+      </div>
+    );
+  } njhhj
+
+
+  // ✅ Render component into div
+  const root = ReactDOM.createRoot(document.getElementById("good_job"));
+  root.render(<LightSwitch />);
+</script>
+
+</body>
+</html>
